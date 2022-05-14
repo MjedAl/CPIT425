@@ -12,28 +12,27 @@ const alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M
 
 function process() {
     var choice = "";
-    console.log(algorithmSelect.selectedOptions[0].value)
     if (algorithmSelect.selectedOptions[0].value == "none"){
-        alert("Plase choose the algorithm");
+        alert("Please choose the algorithm");
         return;
     } else if (input.value == "" ){
-        alert("Plase fill the input first");
+        alert("Please fill the input first");
         return;
     }
     if (algorithmSelect.selectedOptions[0].value == "rf") {
         if (isProcessTypeEncryption.checked) {
-            choice = "Rail Fence Encryption (key:" + keyInput.value + ") Output:"
+            choice = "Rail Fence Encryption Output (key:" + keyInput.value + "):"
             railFenceEnc(eval(keyInput.value));
         } else {
-            choice = "Rail Fence Decryption (key:" + keyInput.value + ") Output:"
+            choice = "Rail Fence Decryption Output (key:" + keyInput.value + "):"
             railFenceDec(eval(keyInput.value));
         }
     } else if (algorithmSelect.selectedOptions[0].value == "c") {
         if (isProcessTypeEncryption.checked) {
-            choice = "Caesar Cipher Encryption (key:" + keyInput.value + ") Output:"
+            choice = "Caesar Cipher Encryption Output (key:" + keyInput.value + "):"
             CeaspherEnc(eval(keyInput.value));
         } else {
-            choice = "Caesar Cipher Decryption (key:" + keyInput.value + ") Output:"
+            choice = "Caesar Cipher Decryption Output (key:" + keyInput.value + "):"
             CeaspherDec(eval(keyInput.value));
         }
     }
@@ -91,6 +90,7 @@ function railFenceEnc(key) {
 
     outputOfProcess.innerText = encryptedMsg;
 }
+
 function railFenceDec(key) {
     var decryptedMsg = input.value.split("");
 
