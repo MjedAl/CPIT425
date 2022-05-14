@@ -30,17 +30,17 @@ function process() {
     } else if (algorithmSelect.selectedOptions[0].value == "c") {
         if (isProcessTypeEncryption.checked) {
             choice = "Caesar Cipher Encryption Output:"
-            CeaspherEnc(eval(keyInput.value));
+            CaesarEnc(eval(keyInput.value));
         } else {
             choice = "Caesar Cipher Decryption Output:"
-            CeaspherDec(eval(keyInput.value));
+            CaesarDec(eval(keyInput.value));
         }
     }
     outputBox.classList.remove("d-none");
     outputDetails.innerText = choice;
 }
 
-function CeaspherEnc(key) {
+function CaesarEnc(key) {
     var encryptedMessage = "";
     var message = input.value.toUpperCase().replace(/ /g, "");
 
@@ -52,7 +52,7 @@ function CeaspherEnc(key) {
     outputOfProcess.innerText = encryptedMessage;
 }
 
-function CeaspherDec(key) {
+function CaesarDec(key) {
     var decryptedMessage = "";
     var message = input.value.toUpperCase().replace(/ /g, "");
 
