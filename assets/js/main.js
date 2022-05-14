@@ -21,18 +21,18 @@ function process() {
     }
     if (algorithmSelect.selectedOptions[0].value == "rf") {
         if (isProcessTypeEncryption.checked) {
-            choice = "Rail Fence Encryption Output (key:" + keyInput.value + "):"
+            choice = "Rail Fence Encryption Output:"
             railFenceEnc(eval(keyInput.value));
         } else {
-            choice = "Rail Fence Decryption Output (key:" + keyInput.value + "):"
+            choice = "Rail Fence Decryption Output:"
             railFenceDec(eval(keyInput.value));
         }
     } else if (algorithmSelect.selectedOptions[0].value == "c") {
         if (isProcessTypeEncryption.checked) {
-            choice = "Caesar Cipher Encryption Output (key:" + keyInput.value + "):"
+            choice = "Caesar Cipher Encryption Output:"
             CeaspherEnc(eval(keyInput.value));
         } else {
-            choice = "Caesar Cipher Decryption Output (key:" + keyInput.value + "):"
+            choice = "Caesar Cipher Decryption Output:"
             CeaspherDec(eval(keyInput.value));
         }
     }
