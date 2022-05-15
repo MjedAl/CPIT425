@@ -57,7 +57,10 @@ function CaesarDec(key) {
     var message = input.value.toUpperCase().replace(/ /g, "");
 
     for (var i = 0; i < message.length; i++) {
-        var decryptedIndex = Math.abs(alphabet.indexOf(message[i]) - key);
+        var decryptedIndex = (alphabet.indexOf(message[i]) - key) % alphabet.length;
+        if (decryptedIndex < 0){
+            decryptedIndex = alphabet.length + decryptedIndex;
+        }
         decryptedMessage += alphabet[decryptedIndex];
     }
 
