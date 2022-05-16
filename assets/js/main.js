@@ -86,8 +86,8 @@ function railFenceEnc(key) {
 
     for (var row = 0; row < key; row++) {
         var iter = 0;
-        for (var i = row; i < input.value.length; i += getTerm(iter++, row, key)) {
-            encryptedMsg += input.value.charAt(i);
+        for (var i = row; i < message.length; i += getTerm(iter++, row, key)) {
+            encryptedMsg += message.charAt(i);
         }
     }
 
@@ -101,8 +101,8 @@ function railFenceDec(key) {
     var pos = 0;
     for (var row = 0; row < key; row++) {
         var iter = 0;
-        for (var i = row; i < input.value.length; i += getTerm(iter++, row, key)) {
-            decryptedMsg[i] = input.value.charAt(pos++)
+        for (var i = row; i < message.length; i += getTerm(iter++, row, key)) {
+            decryptedMsg[i] = message.charAt(pos++)
         }
     }
     decryptedMsg = decryptedMsg.join("");
