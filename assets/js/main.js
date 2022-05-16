@@ -30,17 +30,17 @@ function process() {
     } else if (algorithmSelect.selectedOptions[0].value == "c") {
         if (isProcessTypeEncryption.checked) {
             choice = "Caesar Cipher Encryption Output:"
-            CaesarEnc(eval(keyInput.value));
+            caesarEnc(eval(keyInput.value));
         } else {
             choice = "Caesar Cipher Decryption Output:"
-            CaesarDec(eval(keyInput.value));
+            caesarDec(eval(keyInput.value));
         }
     }
     outputBox.classList.remove("d-none");
     outputDetails.innerText = choice;
 }
 
-function CaesarEnc(key) {
+function caesarEnc(key) {
     var encryptedMessage = "";
     var message = input.value.toUpperCase().replace(/ /g, "");
 
@@ -52,7 +52,7 @@ function CaesarEnc(key) {
     outputOfProcess.innerText = encryptedMessage;
 }
 
-function CaesarDec(key) {
+function caesarDec(key) {
     var decryptedMessage = "";
     var message = input.value.toUpperCase().replace(/ /g, "");
 
@@ -71,11 +71,10 @@ function getTerm(iteration, row, size) {
     if ((size == 0) || (size == 1)) {
         return 1;
     }
-    if ((row == 0) || (row == size - 1)) { // Max. distance is achieved at the ends and equally (size-1)*2
+    if ((row == 0) || (row == size - 1)) {
         return (size - 1) * 2;
     }
-
-    if (iteration % 2 == 0) { // In the description of the method above this identity is demonstrated
+    if (iteration % 2 == 0) {
         return (size - 1 - row) * 2;
     }
     return 2 * row;
@@ -83,6 +82,7 @@ function getTerm(iteration, row, size) {
 
 function railFenceEnc(key) {
     var encryptedMsg = "";
+    var message = input.value.toUpperCase().replace(/ /g, "");
 
     for (var row = 0; row < key; row++) {
         var iter = 0;
@@ -96,6 +96,7 @@ function railFenceEnc(key) {
 
 function railFenceDec(key) {
     var decryptedMsg = input.value.split("");
+    var message = input.value.toUpperCase().replace(/ /g, "");
 
     var pos = 0;
     for (var row = 0; row < key; row++) {
