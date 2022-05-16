@@ -8,4 +8,4 @@ We aim to help users to encrypt and decrypt text efficiently using our online to
 
 ## Webpage Link
 
-URL: https://mjed.xyz/CPIT425/#
+URL: https://mjed.xyz/CPIT425
